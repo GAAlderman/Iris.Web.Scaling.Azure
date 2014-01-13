@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>chilkat-win32</id>
+    <version>9.4.1.42</version>
+    <authors>Chilkat Software,  Inc.</authors>
+    <owners>Chilkat Software,  Inc.</owners>
+    <licenseUrl>http://www.chilkatsoft.com/license.asp</licenseUrl>
+    <projectUrl>http://www.chilkatsoft.com/</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Chilkat .NET Class Library (32-bit)</description>
+    <releaseNotes>Release notes at http://www.cknotes.com/?cat=100</releaseNotes>
+    <copyright>Copyright 2013, Chilkat Software, Inc.</copyright>
+    <tags>chilkat</tags>
+  </metadata>
+</package>

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iris.Web.Scaling.Azure", "Iris.Web.Scaling.Azure\Iris.Web.Scaling.Azure.csproj", "{137D5CDE-FCF5-45A6-B3E3-48358A0C8E43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Web Services", "3. Web Services", "{AFA0FF9E-D77C-469D-A821-D9D4060F42E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Libs", "4. Libs", "{D46290C2-7434-4BA6-B886-96F68D2303A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iris.Lib.Security", "..\Iris.Web.Api\Iris.Lib.Security\Iris.Lib.Security.csproj", "{EA1FCD71-63A4-4407-B2A5-E0E1ECA33BB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iris.Lib.Utils", "..\Iris.Web.Api\Iris.Lib.Utils\Iris.Lib.Utils.csproj", "{5BF6FECC-245C-4039-A203-FD2B7AD17868}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{137D5CDE-FCF5-45A6-B3E3-48358A0C8E43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{137D5CDE-FCF5-45A6-B3E3-48358A0C8E43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{137D5CDE-FCF5-45A6-B3E3-48358A0C8E43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{137D5CDE-FCF5-45A6-B3E3-48358A0C8E43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA1FCD71-63A4-4407-B2A5-E0E1ECA33BB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA1FCD71-63A4-4407-B2A5-E0E1ECA33BB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA1FCD71-63A4-4407-B2A5-E0E1ECA33BB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA1FCD71-63A4-4407-B2A5-E0E1ECA33BB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BF6FECC-245C-4039-A203-FD2B7AD17868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BF6FECC-245C-4039-A203-FD2B7AD17868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BF6FECC-245C-4039-A203-FD2B7AD17868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BF6FECC-245C-4039-A203-FD2B7AD17868}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{137D5CDE-FCF5-45A6-B3E3-48358A0C8E43} = {AFA0FF9E-D77C-469D-A821-D9D4060F42E1}
+		{EA1FCD71-63A4-4407-B2A5-E0E1ECA33BB2} = {D46290C2-7434-4BA6-B886-96F68D2303A9}
+		{5BF6FECC-245C-4039-A203-FD2B7AD17868} = {D46290C2-7434-4BA6-B886-96F68D2303A9}
+	EndGlobalSection
+EndGlobal
