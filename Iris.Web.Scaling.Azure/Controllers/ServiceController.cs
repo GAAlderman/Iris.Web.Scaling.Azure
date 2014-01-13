@@ -18,7 +18,7 @@ namespace Iris.Web.Scaling.Azure.Controllers
         /// </summary>
         /// <returns>True if successful, false if not.</returns>
         [ClientVerification]
-        [HttpGet]
+        [HttpPost]
         public HttpResponseMessage CreateService(ServiceCommandDto serviceCommand)
         {
             try

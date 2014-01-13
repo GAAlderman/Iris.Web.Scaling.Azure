@@ -57,19 +57,5 @@ namespace Iris.Web.Scaling.Azure.Models
         /// </summary>
         public string SourceImage { get; set; }
 
-        public VmCommandDto(string subscriptionId, string vmName)
-        {
-            SubscriptionId = subscriptionId;
-            VmName = vmName;
-            VmRoleSize = string.Empty;
-            SSHPort = 0;
-            MirthWebPort = 0;
-            MirthAdminPort = 0;
-            VHDFileName = string.Empty;
-            VMUserName = string.Empty;
-            VMPassword = string.Empty;
-            SourceImage = string.Empty;
-        }
-
     }
 }

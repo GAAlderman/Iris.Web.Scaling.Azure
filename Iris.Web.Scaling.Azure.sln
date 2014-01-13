@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iris.Lib.Security", "..\Iri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iris.Lib.Utils", "..\Iris.Web.Api\Iris.Lib.Utils\Iris.Lib.Utils.csproj", "{5BF6FECC-245C-4039-A203-FD2B7AD17868}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Deployment", "5. Deployment", "{1560B057-642B-4BAC-8F97-241F47A3AED4}"
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Iris.Web.Scaling.Azure.Deployment", "Iris.Web.Scaling.Azure.Deployment\Iris.Web.Scaling.Azure.Deployment.ccproj", "{EF0E2894-99CE-4AA1-B9D5-C6BE1239C626}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,10 @@ Global
 		{5BF6FECC-245C-4039-A203-FD2B7AD17868}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BF6FECC-245C-4039-A203-FD2B7AD17868}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BF6FECC-245C-4039-A203-FD2B7AD17868}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF0E2894-99CE-4AA1-B9D5-C6BE1239C626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF0E2894-99CE-4AA1-B9D5-C6BE1239C626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF0E2894-99CE-4AA1-B9D5-C6BE1239C626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF0E2894-99CE-4AA1-B9D5-C6BE1239C626}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,5 +47,6 @@ Global
 		{137D5CDE-FCF5-45A6-B3E3-48358A0C8E43} = {AFA0FF9E-D77C-469D-A821-D9D4060F42E1}
 		{EA1FCD71-63A4-4407-B2A5-E0E1ECA33BB2} = {D46290C2-7434-4BA6-B886-96F68D2303A9}
 		{5BF6FECC-245C-4039-A203-FD2B7AD17868} = {D46290C2-7434-4BA6-B886-96F68D2303A9}
+		{EF0E2894-99CE-4AA1-B9D5-C6BE1239C626} = {1560B057-642B-4BAC-8F97-241F47A3AED4}
 	EndGlobalSection
 EndGlobal

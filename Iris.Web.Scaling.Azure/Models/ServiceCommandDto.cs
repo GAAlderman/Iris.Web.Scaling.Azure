@@ -22,15 +22,5 @@ namespace Iris.Web.Scaling.Azure.Models
         /// </summary>
         public string ServiceLocation { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public ServiceCommandDto(string subscriptionId, string serverName)
-        {
-            SubscriptionId = subscriptionId;
-            ServerName = serverName;
-            ServiceLocation = string.Empty;
-        }
-
     }
 }

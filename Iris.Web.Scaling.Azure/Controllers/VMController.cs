@@ -20,7 +20,7 @@ namespace Iris.Web.Scaling.Azure.Controllers
         /// <param name="vmCommand">VMCommand DTO specifying the command options.</param>
         /// <returns>HttpStatus.OK if successful, false if not.</returns>
         [ClientVerification]
-        [HttpGet]
+        [HttpPost]
         public HttpResponseMessage StartVM(VmCommandDto vmCommand)
         {
             try
@@ -131,10 +131,11 @@ namespace Iris.Web.Scaling.Azure.Controllers
         /// <summary>Allan Alderman 1-12-2013
         /// This method stops a running VM and deletes associates services and media
         /// </summary>
-        /// <param name="vmCommand">VMCommand DTO specifying the command options.</param>
+        /// <param name="subscriptionId">The subscription that owns the vm to be deleted.</param>
+        /// <param name="vmName">The VM to be deleted.</param>
         [ClientVerification]
-        [HttpGet]
-        public HttpResponseMessage StopVM(VmCommandDto vmCommand)
+        [HttpDelete]
+        public HttpResponseMessage StopVM(string subscriptionId, string vmName)
         {
             try
             {
@@ -143,29 +144,21 @@ namespace Iris.Web.Scaling.Azure.Controllers
                 var thumbprint = Request.Headers.GetValues("Authorization-Token").First();
 
                 //verify arguments
-                if (vmCommand == null)
+                if (string.IsNullOrEmpty(subscriptionId))
                 {
-                    throw new ArgumentNullException("vmCommand");
+                    throw new ArgumentNullException("subscriptionId");
                 }
-                if (string.IsNullOrEmpty(vmCommand.SubscriptionId))
+                if (string.IsNullOrEmpty(vmName))
                 {
-                    throw new ArgumentException("SubscriptionId must be supplied.");
-                }
-                if (string.IsNullOrEmpty(vmCommand.VmName))
-                {
-                    throw new ArgumentException("VMName must be supplied.");
-                }
-                if (string.IsNullOrEmpty(vmCommand.SubscriptionId))
-                {
-                    throw new ArgumentException("SubscriptionId must be supplied.");
+                    throw new ArgumentNullException("vmName");
                 }
 
                 //make up the Azure command to stop the VM
                 //var uri = String.Format("https://management.core.windows.net/{0}/services/hostedservices/{1}/deployments/{2}/roles/{3}?comp=media",
                 var uri = String.Format(
                     "https://management.core.windows.net/{0}/services/hostedservices/{1}?comp=media",
-                    vmCommand.SubscriptionId,
-                    vmCommand.VmName);
+                    subscriptionId,
+                    vmName);
 
                 //Issue the request to create the cloud service
                 var responseMsg = SmapiCommandHandlerControllerUtils.IssueAzureCommand(uri,

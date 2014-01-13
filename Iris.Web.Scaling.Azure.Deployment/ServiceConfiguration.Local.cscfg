@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="Iris.Web.Scaling.Azure.Deployment" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2013-10.2.2">
+  <Role name="Iris.Web.Scaling.Azure">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="iris" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEGhR3eTpYnqHSEt+cEGhL0QwDQYJKoZIhvcNAQEBBQAEggEAWe+f6LewmxbFBkBG8K+0k5vT/NP0JWm1HIA1ks9kL2rq3l4xatnAyXJdvffTPaRoIqCxHcMoIwSPxWEvJvSl18pG51ttrPDRMXwp2x2OYKipaakXp0QzDzd6fTkZYCnqur+JdaliHY/sz4yUsFTPXywNI0c/j7X+AKpnQKVyAAaGugN9R1Z+HW4v0wZ/NuvXG282lNWcNYASY4jq7FU183mR+Vs3xXJhv67rPH1j7aNKc3O2w6J73+lHHkNELvWbCxnrdK+tw1/GtEPFe+b9Di75bYc3mw2+Z4kz3KSSq7bNvrhXK+CGC7r9a797D6ednmKNsYp1JXc8rbGo78SoXzAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECKM3HAmVpodNgBDXRIEO2Uf+NL0L0abEX4UQ" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2015-01-13T23:59:59.0000000-06:00" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="1076528F8EB157CCDC42B7D2B9D149304295E538" thumbprintAlgorithm="sha1" />
+      <Certificate name="rdp" thumbprint="B8CAB982B7BAC0E3F8186CE156D9122FEA7EC7B3" thumbprintAlgorithm="sha1" />
+      <Certificate name="AzureTools" thumbprint="EB4BD3C9B31266DA3B14D29ABB330A8D813E1003" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+</ServiceConfiguration>
