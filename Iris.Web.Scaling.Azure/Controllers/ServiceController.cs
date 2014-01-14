@@ -16,8 +16,8 @@ namespace Iris.Web.Scaling.Azure.Controllers
         /// <summary>Allan Alderman 12-31-2013
         /// This method starts a VM within Azure
         /// </summary>
-        /// <returns>True if successful, false if not.</returns>
-        [ClientVerification]
+        /// <returns>Http OK result if successful; throwst.</returns>
+        [RequiresCommandHandlerAuthorization]
         [HttpPost]
         public HttpResponseMessage CreateService(ServiceCommandDto serviceCommand)
         {

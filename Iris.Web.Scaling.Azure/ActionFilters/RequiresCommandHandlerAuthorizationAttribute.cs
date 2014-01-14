@@ -10,7 +10,7 @@ namespace Iris.Web.Scaling.Azure.ActionFilters
     /// <summary>
     /// 
     /// </summary>
-    public class ClientVerificationAttribute : ActionFilterAttribute
+    public class RequiresCommandHandlerAuthorizationAttribute : ActionFilterAttribute
     {
         /// <summary>
         /// 
@@ -21,15 +21,17 @@ namespace Iris.Web.Scaling.Azure.ActionFilters
             try
             {
                 var token = actionContext.Request.Headers.GetValues("Authorization-Token").First();
-                if (token != null &&
-                    String.Equals(
-                        token, 
+                if (token == null ||
+                    !String.Equals(
+                        token,
                         System.Configuration.ConfigurationManager.AppSettings["SmapiAuthorizationToken"],
                         StringComparison.CurrentCultureIgnoreCase))
                 {
-                    return;
+                    actionContext.Response = new HttpResponseMessage(HttpStatusCode.Forbidden)
+                    {
+                        Content = new StringContent("Unauthorized client")
+                    };
                 }
-                actionContext.Response = new HttpResponseMessage(HttpStatusCode.Forbidden) { Content = new StringContent("Unauthorized client") };
             }
             catch (Exception)
             {

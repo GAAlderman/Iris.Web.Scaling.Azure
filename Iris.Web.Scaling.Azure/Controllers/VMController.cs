@@ -19,7 +19,7 @@ namespace Iris.Web.Scaling.Azure.Controllers
         /// </summary>
         /// <param name="vmCommand">VMCommand DTO specifying the command options.</param>
         /// <returns>HttpStatus.OK if successful, false if not.</returns>
-        [ClientVerification]
+        [RequiresCommandHandlerAuthorization]
         [HttpPost]
         public HttpResponseMessage StartVM(VmCommandDto vmCommand)
         {
@@ -128,7 +128,7 @@ namespace Iris.Web.Scaling.Azure.Controllers
         /// </summary>
         /// <param name="subscriptionId">The subscription that owns the vm to be deleted.</param>
         /// <param name="vmName">The VM to be deleted.</param>
-        [ClientVerification]
+        [RequiresCommandHandlerAuthorization]
         [HttpDelete]
         public HttpResponseMessage StopVM(string subscriptionId, string vmName)
         {

@@ -4,12 +4,12 @@
     <Sites>
       <Site name="Web">
         <Bindings>
-          <Binding name="Endpoint1" endpointName="SSH" />
+          <Binding name="Endpoint1" endpointName="HTTPS" />
         </Bindings>
       </Site>
     </Sites>
     <Endpoints>
-      <InputEndpoint name="SSH" protocol="https" port="443" localPort="443" certificate="rdp" />
+      <InputEndpoint name="HTTPS" protocol="https" port="443" localPort="443" certificate="SSL" />
     </Endpoints>
     <Imports>
       <Import moduleName="Diagnostics" />
@@ -19,6 +19,7 @@
     <Certificates>
       <Certificate name="rdp" storeLocation="LocalMachine" storeName="My" />
       <Certificate name="AzureTools" storeLocation="LocalMachine" storeName="My" />
+      <Certificate name="SSL" storeLocation="LocalMachine" storeName="My" />
     </Certificates>
   </WebRole>
 </ServiceDefinition>

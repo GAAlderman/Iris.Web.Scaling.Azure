@@ -14,6 +14,7 @@
       <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="1076528F8EB157CCDC42B7D2B9D149304295E538" thumbprintAlgorithm="sha1" />
       <Certificate name="rdp" thumbprint="B8CAB982B7BAC0E3F8186CE156D9122FEA7EC7B3" thumbprintAlgorithm="sha1" />
       <Certificate name="AzureTools" thumbprint="EB4BD3C9B31266DA3B14D29ABB330A8D813E1003" thumbprintAlgorithm="sha1" />
+      <Certificate name="SSL" thumbprint="77CE24E8E2341EB0C8DA7AAD575EC608225C501A" thumbprintAlgorithm="sha1" />
     </Certificates>
   </Role>
 </ServiceConfiguration>
