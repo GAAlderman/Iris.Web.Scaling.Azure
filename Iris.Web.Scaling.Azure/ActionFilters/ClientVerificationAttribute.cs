@@ -21,7 +21,14 @@ namespace Iris.Web.Scaling.Azure.ActionFilters
             try
             {
                 var token = actionContext.Request.Headers.GetValues("Authorization-Token").First();
-                if (token != null && !string.IsNullOrEmpty(token)) return;
+                if (token != null &&
+                    String.Equals(
+                        token, 
+                        System.Configuration.ConfigurationManager.AppSettings["SmapiAuthorizationToken"],
+                        StringComparison.CurrentCultureIgnoreCase))
+                {
+                    return;
+                }
                 actionContext.Response = new HttpResponseMessage(HttpStatusCode.Forbidden) { Content = new StringContent("Unauthorized client") };
             }
             catch (Exception)

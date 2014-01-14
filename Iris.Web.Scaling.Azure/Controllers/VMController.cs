@@ -25,10 +25,6 @@ namespace Iris.Web.Scaling.Azure.Controllers
         {
             try
             {
-                //the cert thumbprint must be passed as the Authorization-Token.
-                //use it to fetch the cert to attach to the request.
-                var thumbprint = Request.Headers.GetValues("Authorization-Token").First();
-
                 //verify arguments
                 if (vmCommand == null)
                 {
@@ -103,7 +99,6 @@ namespace Iris.Web.Scaling.Azure.Controllers
                 //Issue the request
                 var responseMsg = SmapiCommandHandlerControllerUtils.IssueAzureCommand(uri,
                     "POST",
-                    thumbprint,
                     configurationXML);
 
                 //fetch the response and check to be sure it was what we expected
@@ -139,10 +134,6 @@ namespace Iris.Web.Scaling.Azure.Controllers
         {
             try
             {
-                //the cert thumbprint must be passed as the Authorization-Token.
-                //use it to fetch the cert to attach to the request.
-                var thumbprint = Request.Headers.GetValues("Authorization-Token").First();
-
                 //verify arguments
                 if (string.IsNullOrEmpty(subscriptionId))
                 {
@@ -163,7 +154,6 @@ namespace Iris.Web.Scaling.Azure.Controllers
                 //Issue the request to create the cloud service
                 var responseMsg = SmapiCommandHandlerControllerUtils.IssueAzureCommand(uri,
                     "DELETE",
-                    thumbprint,
                     string.Empty);
                 //if the status code is Accepted or not found, then consider the delete successful
                 if (responseMsg.StatusCode != HttpStatusCode.Accepted &&

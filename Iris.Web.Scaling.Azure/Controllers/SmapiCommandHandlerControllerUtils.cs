@@ -36,9 +36,8 @@ namespace Iris.Web.Scaling.Azure.Controllers
         /// Allan Alderman 1-10-2014
         /// Assembles a VM Managment client, attaching the correct management certificate.
         /// </summary>
-        /// <param name="thumbprint">The thumbprint of the certificate to attach to the command.</param>
         /// <returns>An HTTP client that is ready and authorized to issue commands to Azure's REST API.</returns>
-        public static HttpClient CreateVMManagementClient(string thumbprint)
+        public static HttpClient CreateVMManagementClient()
         {
             if (_http != null) return _http;
             var handler = new WebRequestHandler();
@@ -56,14 +55,12 @@ namespace Iris.Web.Scaling.Azure.Controllers
         /// </summary>
         /// <param name="uri">The URI to call</param>
         /// <param name="method">The method to use for the invocation.  May be "POST", "PUT", "GET", or "DELETE"</param>
-        /// <param name="thumbprint">The thumbprint of the certificate to attach to the command.</param>
         /// <param name="requestBodyXML">The XML to pass to the REST service.  This can be an empty string.</param>
         /// <returns>The HttpResponse returned by the REST call.</returns>
-        public static HttpResponseMessage IssueAzureCommand(string uri, string method, string thumbprint,
-            string requestBodyXML = "")
+        public static HttpResponseMessage IssueAzureCommand(string uri, string method, string requestBodyXML = "")
         {
             //construct the HTTP request
-            var http = CreateVMManagementClient(thumbprint);
+            var http = CreateVMManagementClient();
             HttpContent content = new StringContent(requestBodyXML, Encoding.UTF8, "application/xml");
 
             //issue the request and return the result
